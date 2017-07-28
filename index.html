@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Song App</title>
+    <link rel="stylesheet" type="text/css" href="font-awesome.css">
+     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+    
+<!--here we are creating a welcome screen for the users-->
+    
+    <div class="wrapper">
+        <section class="welcome-screen">
+            <h1> Welcome to Songify </h1>
+            <h3> Enter name to access your account </h3>
+            <div class="input-wrapper">
+                <input type="text" placeholder="Name" id="name-input">
+                <button> Go </button>
+            </div>
+        </section>
+        <div class="main">
+            <header>
+                <div class="right floated user-name"> </div>
+            </header>
+
+            <section class="content">
+                <audio id="audioElement" src="song1.mp3"></audio>
+<!-- 
+                <div class="list-headers" >
+        <div> Title </div> 
+        <div> Artist </div>
+        <div> Album </div>
+        <div> Duration </div>
+        </div> -->
+
+       <table id="songs">
+    <thead class="list-headers">
+            <tr><td> Title </td>
+            <td> Artist </td>
+            <td> Album </td>
+            <td> Duration </td>
+        </tr></thead>
+         <div class="song-list">
+            <tbody><tr class="song" id="song1">
+                <td class="song-name"></td>
+                <td class="song-artist"></td>
+                <td class="song-album"></td>
+                <td class="song-length"></td>
+            </tr>
+            <tr class="song" id="song2">
+                <td class="song-name"></td>
+                <td class="song-artist"></td>
+                <td class="song-album"></td>
+                <td class="song-length"></td>
+            </tr>
+            <tr class="song" id="song3">
+                <td class="song-name"></td>
+                <td class="song-artist"></td>
+                <td class="song-album"></td>
+                <td class="song-length"></td>
+            </tr>
+            <tr class="song" id="song4">
+                <td class="song-name"></td>
+                <td class="song-artist"></td>
+                <td class="song-album"></td>
+                <td class="song-length"></td>
+            </tr>
+        <!-- </div> -->
+    </tbody></table>
+         <div class="current-song-wrapper">
+        <img class="current-song-image">
+        <div>
+        <p class="current-song-name"></p>
+        <p class="current-song-album"></p>
+        </div>
+        </div>
+
+           
+        
+           
+                 <div class="piano-container hidden">
+                <span class="keys" id="key_1"><div class="label">Q</div></span>
+                <span class="black keys" id="key-1"  style="left:25px;"><div class="Blabel">2</div></span>
+
+
+                <span class="keys" id="key_2"><div class="label">W</div></span>
+                <span class="black keys" id="key-2" style="left:65px;"><div class="Blabel">3</div></span>
+
+
+                <span class="keys" id="key_3"><div class="label">E</div></span>
+                <span class="keys" id="key_4"><div class="label">R</div></span>
+                <span class="black keys" id="key-3"  style="left:140px;"><div class="Blabel">5</div></span>
+
+
+                <span class="keys" id="key_5"><div class="label">T</div></span>
+                <span class="black keys" id="key-4"  style="left:180px;"><div class="Blabel">6</div></span>
+
+
+                <span class="keys" id="key_6"><div class="label">Y</div></span>
+                <span class="black keys" id="key-5"  style="left:220px;"><div class="Blabel">7</div></span>
+
+
+                <span class="keys" id="key_7"><div class="label">U</div></span>
+                <span class="keys" id="key_8"><div class="label">I</div></span>
+                <span class="black keys" id="key-6"  style="left:295px;"><div class="Blabel">9</div></span>
+
+
+                <span class="keys" id="key_9"><div class="label">O</div></span>
+                <span class="black keys" id="key-7"  style="left:335px;"><div class="Blabel">0</div></span>
+
+
+                <span class="keys" id="key_10"><div class="label">P</div></span>
+                <span class="keys" id="key_11"><div class="label">[</div></span>
+                <span class="black keys" id="key-8"  style="left:405px;"><div class="Blabel">=</div></span>
+
+
+                <span class="keys" id="key_12"><div class="label">]</div></span>
+                <span class="black keys" id="key-9"  style="left:445px;"><div class="Blabel">A</div></span>
+
+
+                <span class="keys" id="key_13"><div class="label">Z</div></span>
+                <span class="black keys" id="key-10"  style="left:485px;"><div class="Blabel">S</div></span>
+
+
+                <span class="keys" id="key_14"><div class="label">X</div></span>
+                <span class="keys" id="key_15"><div class="label">C</div></span>
+                <span class="black keys" id="key-11"  style="left:555px;"><div class="Blabel">F</div></span>
+
+
+                <span class="keys" id="key_16"><div class="label">V</div></span>
+                <span class="black keys" id="key-12"  style="left:595px;"><div class="Blabel">G</div></span>
+
+
+                <span class="keys" id="key_17"><div class="label">B</div></span>
+                <span class="keys" id="key_18"><div class="label">N</div></span>
+                <span class="black keys" id="key-13"  style="left:665px;"><div class="Blabel">J</div></span>
+
+
+                <span class="keys" id="key_19"><div class="label">M</div></span>
+                <span class="black keys" id="key-14"  style="left:705px;"><div class="Blabel">K</div></span>
+
+
+                <span class="keys" id="key_20"><div class="label">,</div></span>
+                <span class="black keys" id="key-15"  style="left:745px;"><div class="Blabel">L</div></span>
+
+
+                <span class="keys" id="key_21"><div class="label">.</div></span>
+
+      </div>
+            </section>
+
+            <footer>
+                
+<!- icons-->
+                
+                <div class="controls">
+                    <div class="player-buttons">
+                        
+<!- this is our home icon to come back on home page-->
+                       <i class="fa fa-home clickable" aria-hidden="true" style="margin-right: 100px;"></i>
+                        
+                          <i class="fa fa-random clickable disabled" aria-hidden="true"></i>
+                          <i class="fa fa-step-backward clickable" aria-hidden="true"></i>
+                          <i class="fa fa-play clickable play-icon" aria-hidden="true"></i>
+                          <i class="fa fa-step-forward clickable" aria-hidden="true"></i>
+                          <i class="fa fa-repeat disabled clickable" aria-hidden="true"></i>
+
+<!--this is keyboard icon which we are using to open the piano-->
+                        <i class="fa fa-keyboard-o clickable" aria-hidden="true" style="margin-left: 100px;"></i>
+                    </div>
+                    <div class="progress-wrapper">
+                        <span class="time-elapsed"> </span>
+                        <div class="player-progress">
+                            <div class="progress-filled"> </div>
+                        </div>
+                        <span class="song-duration"></span>
+                    </div>    <!--end of class progress wrapper-->
+                </div>    <!--end of class control-->
+            </footer>//end of footer
+        </div>
+    </div>
+    <script src="jquery.js">
+    </script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js">
+    </script>
+    <script src="piano.js">
+    </script>
+        <script src="audiosynth.js">
+    </script>
+    <script src="main.js">
+    </script>
+    
+</body>
+
+</html>
